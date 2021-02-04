@@ -2,6 +2,7 @@ package com.lastcy.learn.webflux.webfluxcy.combine;
 
 import lombok.extern.slf4j.Slf4j;
 import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 import reactor.util.function.Tuple3;
 
 /**
@@ -15,5 +16,7 @@ public class ZipT {
     public static void main(String[] args) {
         Flux<Tuple3<Integer, Integer, Integer>> zip = Flux.zip(Flux.range(1, 3), Flux.range(4, 3), Flux.range(6, 2));
         zip.subscribe(t -> log.info("t1 {},t2 {},t3 {}",t.getT1(),t.getT2(),t.getT3()));
+//        zip.subscribe(t -> log.info("t4 {},t5 {},t3 {}",t.getT1(),t.getT2(),t.getT3()));
+
     }
 }

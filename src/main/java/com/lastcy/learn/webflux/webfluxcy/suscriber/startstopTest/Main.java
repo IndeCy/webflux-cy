@@ -26,6 +26,7 @@ public class Main {
         map.subscribe(s -> log.info("subscribe {},value {}",Thread.currentThread().getName(),s));
 //        map.subscribe(s -> log.info("threadName {},value {}",Thread.currentThread().getName(),s));
 
+        //todo 为什么跳过和停止条件不行呢？
         map.skipUntilOther(a)
                 .takeUntilOther(b)
                 .subscribe(s -> log.info("skip {},value {}",Thread.currentThread().getName(),s));

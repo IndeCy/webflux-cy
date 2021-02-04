@@ -12,8 +12,8 @@ import reactor.core.publisher.Flux;
 @Slf4j
 public class ReduceT {
     public static void main(String[] args) {
-//        Flux.range(1, 5)
-//                .reduce(0, (acc, elem) -> acc + elem) .subscribe(result -> log.info("Result: {}", result));
+        Flux.range(1, 5)
+                .scan(0, (acc, elem) -> acc + elem) .subscribe(result -> log.info("Result: {}", result));
 
 
         Flux.range(1, 5)

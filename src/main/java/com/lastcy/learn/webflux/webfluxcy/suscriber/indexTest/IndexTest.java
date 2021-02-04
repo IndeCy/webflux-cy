@@ -14,16 +14,16 @@ public class IndexTest {
 
     public static void main(String[] args) throws Exception{
 
-//        Flux.range(2021,5)
-//                .timestamp()
-//                .index()
-//                .subscribe(e -> log.info("index {}, timestamp {}, value {}",
-//                        e.getT1(),
-//                        e.getT2().getT1(),
-//                        e.getT2().getT2()));
-//
+        Flux.range(2021,5)
+                .timestamp()
+                .index()
+                .subscribe(e -> log.info("index {}, timestamp {}, value {}",
+                        e.getT1(),
+                        e.getT2().getT1(),
+                        e.getT2().getT2()));
+
 //        System.in.read();
-        any();
+//        any();
     }
 
     static void any(){
