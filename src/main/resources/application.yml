@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    show-sql: true
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///webflux?useSSL=false&autoReconnect=true&autoReconnectForPools=true&useUnicode=true&characterEncoding=utf8    #【主数据库的访问地址】
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:123456}
+    hikari:
+      read-only: false
+      minimum-idle: 10
+      connection-test-query: SELECT 1 from dual
+      maximum-pool-size: 600
+      max-lifetime: 60000
+      login-timeout: 5
+      validation-timeout: 3000
+      connection-timeout: 60000
+      idle-timeout: 60000
