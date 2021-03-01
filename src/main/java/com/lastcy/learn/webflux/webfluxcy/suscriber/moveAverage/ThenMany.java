@@ -39,6 +39,7 @@ public class ThenMany {
 //        mono2.subscribe(s -> System.out.println(s.getName()));
         //            integers[(s.getT1()).intValue()] = 1;
         //todo 为什么（doOnNext,doOnEach）是从第二个元素开始变成1,而doOnSubscribe达到了我的效果
+        //todo 推测是因为这两者都是第一个元素发出后再发出信号
         Flux.fromArray(integers).doOnNext(s -> Arrays.fill(integers,1)).subscribe(System.out::print);
         System.out.println();
         Flux.fromArray(integers).index().doOnNext(s -> integers[(s.getT1()).intValue()] = 2)

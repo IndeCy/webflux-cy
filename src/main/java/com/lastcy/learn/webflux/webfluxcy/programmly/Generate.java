@@ -27,6 +27,7 @@ public class Generate {
                 () -> Tuples.of(0L, 1L), // (1.1)
                 (state, sink) -> { //
                     log.info("generated value: {}", state.getT2()); //
+                    //sink.next是产生下一个元素的逻辑
                     sink.next(state.getT2()); // (1.2)
                     long newValue = state.getT1() + state.getT2(); //
                     return Tuples.of(state.getT2(), newValue); // (1.3)

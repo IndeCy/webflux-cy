@@ -13,7 +13,7 @@ import reactor.core.publisher.Flux;
 public class ReduceT {
     public static void main(String[] args) {
         Flux.range(1, 5)
-                .scan(0, (acc, elem) -> acc + elem) .subscribe(result -> log.info("Result: {}", result));
+                .reduce(0, (acc, elem) -> acc + elem) .subscribe(result -> log.info("Result: {}", result));
 
 
         Flux.range(1, 5)
